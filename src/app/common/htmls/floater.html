@@ -1,0 +1,12 @@
+<div id="drag" class="drag" ng-init="initialize()" ng-hide="hideFloater">
+  <md-tooltip md-direction="top">Quick Launch</md-tooltip>
+  <img src="assets/images/thumb/assist.png" width="45" id="button" class="fl-button p-3 white c-pointer" ng-dblclick="displayModel()">
+  <div id="model">
+    <div class="quick_home">
+      <div class="md-icon-button {{floater.style}} t-center c-pointer" aria-hidden="true" ng-repeat="floater in floaterItems" ng-mobile-click="floater.onClick()">
+        <md-icon id="floaterId_{{$index}}" class="material-icons white-text">{{floater.icon}}</md-icon>
+        <div class="white-text md-subhead">{{floater.name}}</div>
+      </div>
+    </div>
+  </div>
+</div>

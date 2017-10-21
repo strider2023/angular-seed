@@ -1,0 +1,6 @@
+<md-list class="p-0" flex>
+  <md-list-item ng-repeat = "data in expData.modulesName" ng-click="launchModule($index,data)">
+    <span ng-bind="data.label"></span>
+      <md-divider></md-divider>
+  </md-list-item>
+</md-list>

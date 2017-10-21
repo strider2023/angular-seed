@@ -1,0 +1,35 @@
+<div style="touch-action:pan-y;" class="height100 animation-container onboarding_wrap" layout="row" layout-align="center center" layout-fill flex md-swipe-left="showNext()" md-swipe-right="showPrevious()" ng-show="isVisible">
+  <md-button class="md-fab md-mini white md-icon-button absolute on_close" ng-click="closeOnBoarding()">
+    <i class="material-icons grey-text darken-3">close</i>
+  </md-button>
+
+  <div ng-repeat="item in onBoradingItems | orderBy:'-'">
+    <div ng-class="item.color" layout="row" layout-align="center center" layout-fill class="content section__content absolute animation-container__block md-padding" data-block="in" id="{{'object-' + $index}}">
+      <div layout="column" layout-align="center center" flex-xs="100" flex="60">
+        <img class="t-center" ng-src="{{item.image}}">
+        <div class="white-text t-center md-padding">
+          <h2>{{item.title}}</h2>
+          <p>{{item.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div layout="row" layout-align="space-between center" class="list_dots">
+    <md-button class="animate-slide white-text" ng-click="showPrevious()" ng-disabled="isPreviousHidden">Previous</md-button>
+    <!-- <div class="dotstyle dotstyle-dotmove">
+      <ul>
+        <li class="current" ng-repeat="item in onBoradingItems"><a href="#">{{item.title}}</a></li>
+        <li></li>
+      </ul>
+    </div> -->
+    <div class="dotstyle dotstyle-dotmove">
+				<ul>
+          <li ng-repeat="item in onBoradingItems" ng-click="dotclick($index)"><a href="#">{{item.title}}</a></li>
+					<li></li>
+				</ul>
+			</div>
+    <md-button class="animate-slideright white-text" ng-click="showNext()" ng-hide="isNextHidden">Next</md-button>
+    <md-button class="animate-slideright white-text" ng-click="closeOnBoarding()" ng-hide="isDoneHidden">Done</md-button>
+  </div>
+</div>
