@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var app = angular.module('nextTools');
+  var app = angular.module('angularSeedApp');
   app.service('NTStorageService', ntStorageService);
 
   function ntStorageService($window) {

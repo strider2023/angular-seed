@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var app = angular.module('nextTools');
+  var app = angular.module('angularSeedApp');
   app.service('NTFloaterService', NTFloaterService);
 
   function NTFloaterService(NTCommonUIServices, NTStorageService, NTnavBarService, $rootScope, $location) {

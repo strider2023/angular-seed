@@ -1,10 +1,10 @@
 (function() {
   'use strict';
 
-  var app = angular.module('nextTools');
-  app.service('NTDataLoaderService', ntDataLoaderService);
+  var app = angular.module('angularSeedApp');
+  app.service('DataLoaderService', DataLoaderService);
 
-  function ntDataLoaderService($http, $q) {
+  function DataLoaderService($http, $q) {
 
     this.loadLocalFile = function(location, onSuccess, onFaliure) {
       $http.get(location)

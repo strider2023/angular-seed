@@ -11,7 +11,7 @@
 
     .state('Home', {
       url: '/',
-      templateUrl: 'app/modules/experiment/home/home.html',
+      templateUrl: 'app/modules/home/home.html',
       controller: 'HomeController'
     })
 

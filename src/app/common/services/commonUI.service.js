@@ -1,10 +1,11 @@
 (function() {
   'use strict';
 
-  var app = angular.module('nextTools');
-  app.service('NTCommonUIServices', ntCommonUIServices);
+  var app = angular.module('angularSeedApp');
+  app.service('CommonUIServices', CommonUIServices);
 
-  function ntCommonUIServices($mdBottomSheet, $mdToast, $mdDialog, $window, $rootScope) {
+  function CommonUIServices($mdBottomSheet, $mdToast, $mdDialog, $window, $rootScope) {
+
     this.navBarLogFlag = 0;
     this.showBottomSheet = function(dialogObject, onCancel, onSuccess) {
       $mdBottomSheet.show({
@@ -48,6 +49,7 @@
         //.hideDelay(180000)
       );
     };
+    
     this.closeDialogOnbackNavigation = function() {
       $rootScope.$on('$locationChangeStart', function(event) {
         // Check if there is a dialog active
@@ -56,52 +58,6 @@
           $mdDialog.cancel();
         }
       })
-    }
-    var enjoyhint_instance = new EnjoyHint({});
-    this.showHint = function(tool) {
-      enjoyhint_instance = new EnjoyHint({});
-      enjoyhint_instance.set(HINTS[tool]);
-      //run Enjoyhint script
-
-      enjoyhint_instance.run();
-    };
-
-    this.customEvent = function(eventName) {
-      enjoyhint_instance.trigger(eventName);
-    };
-
-    this.goBack = function() {
-      var standalone = window.navigator.standalone,
-        userAgent = window.navigator.userAgent.toLowerCase(),
-        safari = /safari/.test(userAgent),
-        ios = /iphone|ipod|ipad/.test(userAgent);
-      if (ios) {
-        if (!standalone && safari) {
-          //browser
-        } else if (standalone && !safari) {
-          //standalone
-        } else if (!standalone && !safari) {
-          window.location = "callbackHandler";
-          //uiwebview
-        };
-      }
-      // else {
-      //   //not iOS
-      // };
-      else if (typeof(webkit) != "undefined") {
-        // window.location = "callbackHandler";
-        webkit.messageHandlers.callbackHandler.postMessage("Going back to native App")
-      }
-      else if (typeof(NTInterface) != "undefined") {
-        NTInterface.goBack();
-      }
-      else if (typeof(UIKit) != "undefined") {
-        window.location = "callbackHandler";
-        // webkit.messageHandlers.callbackHandler.postMessage("Going back to native App")
-      }
-      else {
-        $window.history.back();
-      }
     }
   }
 })();

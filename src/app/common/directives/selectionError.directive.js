@@ -1,13 +1,13 @@
 (function() {
   'use strict';
 
-  var app = angular.module('nextTools');
+  var app = angular.module('angularSeedApp');
   app.directive('ntSelectionError', ntSelectionError);
 
   function ntSelectionError() {
     var directive = {
       restrict: 'EA',
-      templateUrl: 'app/components/common/htmls/selectionError.html',
+      templateUrl: 'app/common/htmls/selectionError.html',
       scope: {
         image: '@',
         icon: '@',
