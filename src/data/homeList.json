@@ -1,8 +1,22 @@
 [
   {
-    "title": "Item 1"
+    "name": "Person 1",
+    "description": "Description for person 1"
   },
   {
-    "title": "Item 2"
+    "name": "Person 2",
+    "description": "Description for person 2"
+  },
+  {
+    "name": "Person 3",
+    "description": "Description for person 3"
+  },
+  {
+    "name": "Person 4",
+    "description": "Description for person 4"
+  },
+  {
+    "name": "Person 5",
+    "description": "Description for person 5"
   }
 ]

@@ -9,10 +9,16 @@
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
 
-    .state('Home', {
+    .state('home', {
       url: '/',
       templateUrl: 'app/modules/home/home.html',
       controller: 'HomeController'
+    })
+
+    .state('user', {
+      url: '/user',
+      templateUrl: 'app/modules/user/user.html',
+      controller: 'UserController'
     })
 
     $urlRouterProvider.otherwise('/');

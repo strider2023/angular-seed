@@ -1,25 +1,23 @@
 <md-content>
   <md-toolbar class="md-hue-2">
     <div class="md-toolbar-tools">
-      <md-button class="md-icon-button" aria-label="Settings" ng-disabled="false">
-        <i class="material-icons">arrow_back</i>
-      </md-button>
-
-      <h2 flex text-white>Angular Seed</h2>
-
+      <h2 flex class='white-text'>Angular Seed</h2>
       <md-button class="md-icon-button" aria-label="Favorite">
         <i class="material-icons">favorite</i>
       </md-button>
-
-      <md-button class="md-icon-button" aria-label="More">
+      <md-button class="md-icon-button" aria-label="More" ng-click="onInfoClicked()">
         <i class="material-icons">info_outline</i>
       </md-button>
     </div>
   </md-toolbar>
-
   <md-list class="p-0" flex>
-    <md-list-item ng-repeat="homeItem in homeList" ng-click="onListItemClicked(homeItem)">
-      <p>{{homeItem.title}}</p>
+    <md-list-item class="md-2-line" ng-repeat="homeItem in homeList" ng-click="onListItemClicked(homeItem)">
+      <i class="material-icons md-avatar">account_circle</i>
+      <div class="md-list-item-text">
+        <h3>{{homeItem.name}}</h3>
+        <p>{{homeItem.description}}</p>
+      </div>
+      <md-divider></md-divider>
     </md-list-item>
   </md-list>
 </md-content>

@@ -1,6 +1,6 @@
   /** @ngInject */
 function InfoDialogController($scope, $mdDialog, bundle) {
-  $scope.card = bundle;
+  $scope.info = bundle;
 
   $scope.cancel = function() {
     $mdDialog.cancel();
