@@ -21,6 +21,12 @@
       controller: 'UserController'
     })
 
+    .state('threeJS', {
+      url: '/threeJS',
+      templateUrl: 'app/modules/threeJS/threeJS.html',
+      controller: 'ThreeJSController'
+    })
+
     $urlRouterProvider.otherwise('/');
   }
 

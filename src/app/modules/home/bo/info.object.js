@@ -3,7 +3,7 @@ function InfoObject() {
   this.title = "";
   this.description = "";
   this.image = "";
-
+  
   //OOPS Style Constructor. Replace with custom constructor.
   this.init = function() {
     this.title = "Angular 1.x Seed App";
